@@ -1,0 +1,139 @@
+<!-- Written by John R. Thurlby May 2018 -->
+
+<div class="container">
+
+  <div class="container-fluid" id="header" >
+
+          <div class="row" id="mainlogo">
+
+              <div class"column-xs-6"><div id="google_translate_element"></div>
+
+              <script type="text/javascript">
+                  function googleTranslateElementInit() {
+                  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                  }
+              </script> <!-- end script -->
+      
+              <div class"column-xs-6">
+                  <h1><input class="header" type="image" src="/assets/images/to-do-list_logo.jpg" alt="todolist" >
+              </div>
+
+          </div> <!-- end  id="mainlogo -->
+              
+      
+  </div> <!-- end  id="header -->
+  
+  <div class="row"> <!-- row to display incomplete tasks on the left, completed on right -->
+
+    <div class="col-md-1"></div>
+
+    <center>
+
+      <!-- Left side (incomplete) -->
+      <div class="col-md-5">
+
+        <h2 class="itemNotdone">To Do Tasks</h2>
+
+        <div id="todotasks">
+
+          <!-- Dynamically Insert tasks here -->
+          {{#each todolist}} <!-- loop thru all todolists -->
+
+            {{#unless this.tododone}} <!-- format only incomplete ones, boolean false -->
+
+              <form action="/api/todos/update/{{this.id}}" method="POST">
+
+                <div class="input-group todoDone">
+               
+                  <li class="form-control todoTrim">{{this.todoitem}}</li>
+
+                  <span class="input-group-btn">
+                    <button class="btn btn-success chgtaskButton" type="submit">Complete</button>
+                  </span>
+
+                </div> <!-- end class=input-group todoDone -->
+
+              </form> <!-- end form -->
+
+            {{/unless}} <!-- end unless -->
+
+          {{/each}} <!-- end each -->
+        
+        </div>  <!-- end todotasks -->
+
+      </div> <!-- end class=col-md-5 -->
+
+
+      <!-- <div class="col-md-1"></div> -->       
+
+      <!-- Right side (completed) -->
+      <div class="col-md-5">
+
+        <h2 class="todoDone">Completed tasks!</h2>
+
+        <div id="already_completed">
+
+          <!-- Dynamically Insert completed tasks Here -->
+          {{#each todolist}} <!-- loop thru all todolists -->
+
+            {{#if this.tododone}} <!-- format only complete ones, boolean true -->
+
+              <form action="/api/todos/delete/{{this.id}}" method="POST">
+
+                <div class="input-group todoDone">
+
+                  <li class="form-control todoTrim">{{this.todoitem}}</li>
+
+                  <span class="input-group-btn">
+                      <button class="btn btn-success addtaskButton" id={{id}} type="submit">Delete</button>
+                  </span>
+              
+                </div>  <!-- end class=form-control todoTrim -->
+            
+              </form> <!-- end form -->
+            
+            {{/if}} <!-- end if -->
+         
+          {{/each}} <!-- end each -->
+
+        </div> <!-- end already_completed -->
+
+      </div> <!-- end class=col-md-5 -->
+
+    </center> <!-- end center -->
+
+  </div> <!-- end class=row -->
+
+<br>
+<br>
+
+<div class="row"> <!-- row to add a new task -->
+  
+  <div class="col-xs-12 text-center enter_section">
+
+    <h2 class="text-center" >Add A Task</h2>
+
+    <form action="/api/todos" method="POST">
+      
+      <textarea class="form-control" id="name" name="todoitem" placeholder="Task" id="enter_text" maxlength="40" required></textarea>
+      <br>
+      <textarea class="form-control" id="phone" name="phonenum" placeholder="Phone Number (format: xxxxxxxxxx)" maxlength="10" pattern="^\d{10}$"></textarea>
+      <br>
+      <textarea class="form-control" id="textdate" name="textdate" placeholder="Date (format: YYYY-MM-DD)" maxlength="10" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"></textarea>
+      <br>
+      <button type="submit" class="btn btn-primary addtaskButton" id="text-enter-button">Add Task</button>
+
+    </form> <!-- end form -->
+
+    <p>Enter a new task. Click the "Add Task" button.</p>
+    <br>
+    <p>If you would like a text of your task, enter a 10 digit phone number.</p>
+    <p>To schedule the text for a certain date, enter a date in the format YYYY-MM-DD.</p>
+ 
+  </div> <!-- end class=col-xs-12 text-center enter_section -->
+
+</div> <!-- end class=row -->
+
+
+	
+

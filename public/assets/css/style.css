@@ -1,0 +1,161 @@
+html {
+  background-color: #FFC04C;
+}
+
+body {
+  width: 75%;
+ margin: 0 auto; 
+
+ display: flex;
+ min-height: 100vh;
+ flex-direction: column;
+ background-color: white;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Fontdiner Swanky', cursive;
+  font-size: 65px;
+  margin: 50px;
+}
+
+.todoNotDone {
+  font-family: 'Crafty Girls', cursive;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+
+  border-radius: 25px;
+  width: 100%;
+  margin-top: 2%;
+  padding: 10px;
+  background-color: #FFC04C;;
+  border: none;
+}
+
+.todoNotDone:hover {
+  background-color: #FFC04C;;
+}
+
+.todoDone {
+  font-family: 'Crafty Girls', cursive;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+
+  border-radius: 25px;
+  margin-top: 1%;
+  margin-left: 5%;
+  padding: 10px;
+  background-color:  #FFC04C;;
+}
+
+h2 {
+   text-align: left;
+  font-family: 'Fontdiner Swanky', cursive;
+  font-size: 40px;
+}  
+
+.formContainer {
+  background-color: #FFC04C;;
+}
+
+.itemNotdone {
+  font-family: 'Crafty Girls', cursive;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+
+  border-radius: 25px;
+  margin-top: 1%;
+  margin-left: 5%;
+  padding: 10px;
+  background-color:  #FFC04C;
+}
+
+.addtaskButton:active {
+ background-color: #FFC04C;
+}
+
+.chgtaskButton:active {
+  background-color: #FFC04C;
+ }
+
+.Footer {
+ background-color: #FFC04C;
+ padding: 20px 0;
+}
+
+.enter_section {
+  font-family: 'Crafty Girls', cursive;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+
+  border-radius: 25px;
+  width: 60%;
+  margin-top: 10%;
+  margin-left: 20%;
+  padding: 10px;
+  background-color: #FFC04C;
+  border: none;
+}
+
+.logo-center {
+  width: 60%;
+  margin-left: 20%;
+  padding: 10px;
+  border: none;
+}
+
+.todoTrim {
+width: [x]px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+
+.text-center {
+  width: 60%;
+  margin-left: 20%;
+  padding: 10px;
+  border: none;
+}
+
+footer {
+	font-size: 150%;
+	font-style: bold;
+}
+
+.footer-copy {
+	margin-top: 2%;
+	margin-left: 15%;
+	font-family: 'Francois One', sans-serif;
+	font-size: 100%;
+	color: #fff;
+}
+
+#header {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 310px;
+}
+
+#google_translate_element {
+  float: right;
+}
+.goog-logo-link, .goog-logo-link:link, .goog-logo-link:visited, .goog-logo-link:hover, .goog-logo-link:active {
+  font-size: 0px;
+  font-weight: bold;
+  color: #444;
+  text-decoration: none;
+}
+
+.goog-te-gadget {
+  margin-right: 45px;
+  font-family: arial;
+  font-size: 11px;
+  color: #666;
+  white-space: nowrap;
+  float: left;
+}
