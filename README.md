@@ -3,6 +3,10 @@
 This is ToDoList application based on the EatDaBurger requirements. A user can enter a task, then complete the task, and finally delete the task if required. 
 A user can request that the task be sent to them via SMS by adding in a 10 digit phone number. This is done using the Twilio package.  Additionally, an SMS can be sent on a specific date by entering a date in the format of YYYY-MM-DD in the date field. The app is scheduled to run daily via the Heroku scheduler process. If a phone number is entered and no date is, the SMS is sent immediately. Unfortunately, due to the limitations with the Twilio trial package, SMS can only be sent to verified phone numbers added into the Twilio app. Use of the Google language translator, enables the page to be seen in different languages. 
 
+MySQL and Sequelize were used for storing any data entered into the system. NodeJS, with Express and Handlebars, was used to handle front end and backend interactions. The Twilio package was used for limited SMS capabilities.  
+
+<h3><a href="https://limitless-meadow-31421.herokuapp.com/index">Visit the ToDoList</a></h3>
+
 Short video showing capabilities:
 
 ![todolist](https://user-images.githubusercontent.com/33644735/40333908-eff77b78-5d28-11e8-8cc1-b312eef2dc0d.gif)
